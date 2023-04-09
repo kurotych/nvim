@@ -23,8 +23,6 @@ o.loaded_netrwPlugin = 1
 o.termguicolors = true
 -- o.completeopt="preview"
 
-
-
 -- window local
 wo.number = true -- Print current line number
 wo.relativenumber = true -- Relative line number
@@ -37,6 +35,3 @@ wo.conceallevel = 2
 o.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
 o.shiftwidth = 4
 o.expandtab = true -- Converts tabs to spaces
-
-
-

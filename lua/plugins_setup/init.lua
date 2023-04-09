@@ -1,5 +1,6 @@
 local vim = vim
 
+vim.cmd.colorscheme("catppuccin")
 require("plugins_setup.treesitter")
 require("plugins_setup.toggle_term")
 require("plugins_setup.dap")
@@ -46,6 +47,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
 	end,
 })
+
 -- default config:
 require("peek").setup({
 	auto_load = true, -- whether to automatically load preview when
@@ -65,5 +67,6 @@ require("peek").setup({
 	throttle_time = "auto", -- minimum amount of time in milliseconds
 	-- that has to pass before starting new render
 })
+
 vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})

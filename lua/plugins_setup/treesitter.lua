@@ -1,5 +1,4 @@
 local vim = vim
-vim.api.nvim_exec("colorscheme catppuccin", false)
 
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all"

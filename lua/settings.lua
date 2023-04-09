@@ -15,7 +15,15 @@ o.updatetime = 300 -- Faster completion
 o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 o.scrolloff = 7 -- Alyaws show N lines under cursor
 o.completeopt = "menu,menuone,preview,noinsert,noselect" -- Set completeopt to have a better completion experience
+-- nvim-tree advices:
+-- disable netrw at the very start of your init.lua (strongly advised)
+o.loaded_netrw = 1
+o.loaded_netrwPlugin = 1
+-- set termguicolors to enable highlight groups
+o.termguicolors = true
 -- o.completeopt="preview"
+
+
 
 -- window local
 wo.number = true -- Print current line number
@@ -29,3 +37,6 @@ wo.conceallevel = 2
 o.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
 o.shiftwidth = 4
 o.expandtab = true -- Converts tabs to spaces
+
+
+

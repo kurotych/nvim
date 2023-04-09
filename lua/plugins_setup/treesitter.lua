@@ -11,12 +11,12 @@ require("nvim-treesitter.configs").setup({
 		"vim",
 		"python",
 		"html",
-        "css",
+		"css",
 		"solidity",
 		"markdown",
 		"markdown_inline",
-        "bash",
-        "yaml"
+		"bash",
+		"yaml",
 	},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true,

@@ -56,8 +56,8 @@ require("peek").setup({
 	syntax = true, -- enable syntax highlighting, affects performance
 	theme = "light", -- 'dark' or 'light'
 	update_on_change = true,
-	-- app = { 'firefox', '--new-window' },
-	app = "webview", -- 'webview', 'browser', string or a table of strings
+	app = { "firefox", "--new-window" },
+	-- app = "webview", -- 'webview', 'browser', string or a table of strings
 	-- explained below
 
 	filetype = { "markdown" }, -- list of filetypes to recognize as markdown

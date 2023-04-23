@@ -23,6 +23,9 @@ o.loaded_netrwPlugin = 1
 o.termguicolors = true
 -- o.completeopt="preview"
 
+-- Case insentitive search (ic - ignorecase)
+o.ic = true
+
 -- window local
 wo.number = true -- Print current line number
 wo.relativenumber = true -- Relative line number

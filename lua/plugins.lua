@@ -1,5 +1,6 @@
 require("lazy").setup({
 	"catppuccin/nvim",
+    "EdenEast/nightfox.nvim",
 
 	{
 		"kurotych/fuzzy-tag.nvim",

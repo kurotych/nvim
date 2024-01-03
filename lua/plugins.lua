@@ -1,6 +1,6 @@
 require("lazy").setup({
 	"catppuccin/nvim",
-    "EdenEast/nightfox.nvim",
+	"EdenEast/nightfox.nvim",
 
 	{
 		"kurotych/fuzzy-tag.nvim",
@@ -25,7 +25,14 @@ require("lazy").setup({
 	"hrsh7th/nvim-cmp", -- Autocompletion plugin
 	"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
 	"saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
-	"L3MON4D3/LuaSnip", -- Snippets plugin
+
+	{
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp",
+	},
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -52,10 +59,14 @@ require("lazy").setup({
 	"kazhala/close-buffers.nvim",
 	"windwp/nvim-autopairs",
 	"akinsho/toggleterm.nvim",
-	"simrat39/rust-tools.nvim",
+
 	{
-		"toppair/peek.nvim",
-		build = "deno task --quiet build:fast",
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	},
 }, {
 	defaults = { version = nil },

@@ -23,7 +23,7 @@ o.loaded_netrwPlugin = 1
 o.termguicolors = true
 -- o.completeopt="preview"
 
--- Case insentitive search (ic - ignorecase)
+-- Case insensitive search (ic - ignorecase)
 o.ic = true
 
 -- window local

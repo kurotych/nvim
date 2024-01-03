@@ -10,7 +10,7 @@ map("i", "<C-s>", "<ESC>:w<CR>", { silent = true })
 
 -- Copy/Paste outside of VIM
 map("", "<C-C>", '"+y', {})
-map("", "<C-v>", '"+p', {})
+map("n", "<C-v>", '"+p', {})
 
 -- Replace text without yanking replaced line
 map("v", "p", '"_dP', {})
@@ -45,7 +45,7 @@ vim.keymap.set("n", "<M-h>", ":vertical resize -2<CR>", {})
 vim.keymap.set("n", "<M-l>", ":vertical resize +2<CR>", {})
 vim.keymap.set("n", "<M-j>", ":horizontal resize -2<CR>", {})
 vim.keymap.set("n", "<M-k>", ":horizontal resize +2<CR>", {})
-vim.keymap.set("n", "mp", ":lua require('peek').open()<CR>", { silent = true })
+vim.keymap.set("n", "mp", ":MarkdownPreview<CR>", { silent = true })
 
 vim.keymap.set("n", "tt", ":ToggleTerm direction=float<CR>", { silent = true })
 vim.keymap.set("n", "tr", ':TermExec cmd="cargo run" direction=float<CR>', { silent = true })

@@ -20,6 +20,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+	-- vim.keymap.set("n", "gI", vim.lsp.buf.inlay_hint(0), bufopts)
 	vim.keymap.set("n", "<space>k", vim.lsp.buf.signature_help, bufopts)
 	vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
 	vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
@@ -36,10 +37,9 @@ local on_attach = function(client, bufnr)
 end
 
 -- Add additional capabilities supported by nvim-cmp
-local capabilities =
-	require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require("lspconfig")["tsserver"].setup({
+require("lspconfig")["typos_lsp"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -48,10 +48,11 @@ require("lspconfig")["rust_analyzer"].setup({
 	capabilities = capabilities,
 	-- Server-specific settings...
 	settings = {
-		["rust-analyzer"] = {},
-        procMacro = {
-                enable = true,
-        },
+		["rust-analyzer"] = {
+			procMacro = {
+				enable = true,
+			},
+		},
 	},
 })
 
@@ -88,10 +89,16 @@ require("lspconfig")["solidity"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig").marksman.setup({
+-- require("lspconfig").marksman.setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+-- })
+
+require("lspconfig").pylsp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
 -- luasnip setup
 local luasnip = require("luasnip")
 

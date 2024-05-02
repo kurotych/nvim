@@ -89,14 +89,12 @@ require("lspconfig")["solidity"].setup({
 	capabilities = capabilities,
 })
 
--- require("lspconfig").marksman.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
-
 require("lspconfig").pylsp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	plugins = {
+		autopep8 = { enabled = true },
+	},
 })
 
 -- luasnip setup

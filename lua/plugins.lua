@@ -47,7 +47,10 @@ require("lazy").setup({
 
 	{
 		"rcarriga/nvim-dap-ui",
-		dependencies = { "mfussenegger/nvim-dap" },
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			{ "nvim-neotest/nvim-nio" },
+		},
 	},
 
 	-- Find and Replace
@@ -59,6 +62,24 @@ require("lazy").setup({
 	"kazhala/close-buffers.nvim",
 	"windwp/nvim-autopairs",
 	"akinsho/toggleterm.nvim",
+
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	},
 
 	{
 		"iamcco/markdown-preview.nvim",

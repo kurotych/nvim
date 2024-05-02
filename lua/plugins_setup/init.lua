@@ -1,6 +1,6 @@
 local vim = vim
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("dayfox")
 require("plugins_setup.treesitter")
 require("plugins_setup.toggle_term")
 require("plugins_setup.dap")
